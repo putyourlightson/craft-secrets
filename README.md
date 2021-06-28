@@ -69,7 +69,7 @@ composer require putyourlightson/craft-secrets:^1.0.0-beta.1
 
 ## Credits
 
-This plugin is inspired by the [Laravel Secrets](https://github.com/beyondcode/laravel-secrets) package by [Marcel Pociot](https://github.com/mpociot).
+This plugin is inspired by the [Laravel Credentials](https://github.com/beyondcode/laravel-credentials) package by [Marcel Pociot](https://github.com/mpociot).
 
 Icon by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a>.
 

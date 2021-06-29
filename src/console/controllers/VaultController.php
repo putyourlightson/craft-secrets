@@ -53,7 +53,7 @@ class VaultController extends Controller
             }
             else {
                 foreach ($data as $key => $value) {
-                    $this->stdout($key.':'.$value.PHP_EOL, Console::FG_GREEN);
+                    $this->stdout($key.': '.$value.PHP_EOL, Console::FG_GREEN);
                 }
             }
 
@@ -66,7 +66,7 @@ class VaultController extends Controller
             $this->stdout('No value with the key "'.$key.'" exists.'.PHP_EOL, Console::FG_RED);
         }
         else {
-            $this->stdout($key.':'.$value.PHP_EOL, Console::FG_GREEN);
+            $this->stdout($key.': '.$value.PHP_EOL, Console::FG_GREEN);
         }
 
         return ExitCode::OK;

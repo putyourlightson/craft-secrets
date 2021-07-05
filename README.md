@@ -11,7 +11,11 @@ The Secrets plugin allows you to store and manage secrets in an encrypted file. 
 2. The encrypted file can be committed to your repository, meaning you avoid having to send secrets in plaintext to other developers. You also end up with a history of changes to the file.
 3. If secrets change or are rotated then there is only one file that needs to be updated. 
 
-**Read the full documentation at [putyourlightson.com/plugins/secrets »](https://putyourlightson.com/plugins/secrets)**
+![Secrets CLI](https://putyourlightson.com/assets/images/plugins/secrets/secrets-cli.png)
+
+## Documentation
+
+Learn more and read the documentation at [putyourlightson.com/plugins/secrets »](https://putyourlightson.com/plugins/secrets)
 
 ## License
 

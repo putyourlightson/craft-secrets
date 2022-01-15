@@ -24,6 +24,7 @@ class SettingsModel extends Model
     {
         parent::init();
 
+        // Set default values, which config settings may override.
         $this->filePath = Craft::parseEnv('@config/secrets.enc');
         $this->encryptionKey = Craft::$app->config->general->securityKey;
     }

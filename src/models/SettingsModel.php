@@ -7,25 +7,29 @@ namespace putyourlightson\secrets\models;
 
 use Craft;
 use craft\base\Model;
+use craft\helpers\App;
 
 class SettingsModel extends Model
 {
     /**
      * @var string The path of the encrypted secrets file.
      */
-    public $filePath;
+    public string $filePath = '';
 
     /**
      * @var string The key to use for encryption and decryption.
      */
-    public $encryptionKey;
+    public string $encryptionKey = '';
 
-    public function init()
+    /**
+     * @inheritdoc
+     */
+    public function init(): void
     {
         parent::init();
 
         // Set default values, which config settings may override.
-        $this->filePath = Craft::parseEnv('@config/secrets.enc');
+        $this->filePath = App::parseEnv('@config/secrets.enc');
         $this->encryptionKey = Craft::$app->config->general->securityKey;
     }
 }

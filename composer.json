@@ -1,11 +1,11 @@
 {
     "name": "putyourlightson/craft-secrets",
     "description": "Store and manage secrets in an encrypted file.",
-    "version": "1.0.0",
+    "version": "2.0.0-alpha.1",
     "type": "craft-plugin",
     "license": "mit",
     "require": {
-        "craftcms/cms": "^3.0.3"
+        "craftcms/cms": "^4.0.0-alpha.1"
     },
     "autoload": {
         "psr-4": {
@@ -23,7 +23,7 @@
         "developer": "PutYourLightsOn",
         "developerUrl": "https://putyourlightson.com/",
         "documentationUrl": "https://putyourlightson.com/plugins/secrets",
-        "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-secrets/v1/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-secrets/v2/CHANGELOG.md",
         "class": "putyourlightson\\secrets\\Secrets"
     }
 }

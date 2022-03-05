@@ -15,17 +15,23 @@ use putyourlightson\secrets\Secrets;
 class VaultService extends Component
 {
     /**
-     * @var array
+     * @var null|array
      */
-    private $_data;
+    private ?array $_data = null;
 
-    public function getValue(string $key, $default = null)
+    /**
+     * Returns the value from the vault.
+     */
+    public function getValue(string $key, $default = null): ?string
     {
         $data = $this->getData();
 
         return $data[$key] ?? $default;
     }
 
+    /**
+     * Adds the value to the vault.
+     */
     public function addValue(string $key, string $value)
     {
         $data = $this->getData();
@@ -34,6 +40,9 @@ class VaultService extends Component
         $this->_save($data);
     }
 
+    /**
+     * Deletes the value from the vault.
+     */
     public function deleteValue(string $key)
     {
         $data = $this->getData();
@@ -45,7 +54,10 @@ class VaultService extends Component
         $this->_save($data);
     }
 
-    public function getData()
+    /**
+     * Returns all values from the vault.
+     */
+    public function getData(): array
     {
         if ($this->_data !== null) {
             return $this->_data;

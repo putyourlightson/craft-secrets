@@ -20,8 +20,11 @@ class Secrets extends Plugin
     /**
      * @var Secrets
      */
-    public static $plugin;
+    public static Secrets $plugin;
 
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         parent::init();
@@ -34,11 +37,17 @@ class Secrets extends Plugin
         ]);
     }
 
-    public static function getValue(string $key, $default = null)
+    /**
+     * Returns the value.
+     */
+    public static function getValue(string $key, string $default = null): ?string
     {
         return self::$plugin->vault->getValue($key, $default);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function createSettingsModel(): SettingsModel
     {
         return new SettingsModel();

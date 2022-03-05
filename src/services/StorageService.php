@@ -13,6 +13,9 @@ use putyourlightson\secrets\Secrets;
  */
 class StorageService extends Component
 {
+    /**
+     * Returns the contents from storage.
+     */
     public function getContents(): string
     {
         $filePath = Secrets::$plugin->settings->filePath;
@@ -24,6 +27,9 @@ class StorageService extends Component
         return file_get_contents($filePath);
     }
 
+    /**
+     * Saves the contents to storage.
+     */
     public function saveContents(string $contents)
     {
         $filePath = Secrets::$plugin->settings->filePath;

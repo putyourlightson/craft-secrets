@@ -64,8 +64,12 @@ class VaultService extends Component
         }
 
         $this->_data = [];
-
         $contents = Secrets::$plugin->storage->getContents();
+
+        if (empty($contents)) {
+            return $this->_data;
+        }
+
         $json = Craft::$app->security->decryptByKey($contents, Secrets::$plugin->settings->encryptionKey);
         $this->_data = json_decode($json, true);
 

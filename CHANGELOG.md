@@ -1,6 +1,6 @@
 # Release Notes for Secrets
 
-## 2.0.0-alpha - 2022-03-05
+## 2.0.0 - 2022-05-04
 ### Added
 - Added compatibility with Craft 4.
 

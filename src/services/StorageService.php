@@ -30,7 +30,7 @@ class StorageService extends Component
     /**
      * Saves the contents to storage.
      */
-    public function saveContents(string $contents)
+    public function saveContents(string $contents): void
     {
         $filePath = Secrets::$plugin->settings->filePath;
 

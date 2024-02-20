@@ -50,8 +50,7 @@ class VaultController extends Controller
 
             if (empty($data)) {
                 $this->stdout('No values exist.' . PHP_EOL, BaseConsole::FG_RED);
-            }
-            else {
+            } else {
                 foreach ($data as $key => $value) {
                     $this->stdout($key . ': ' . $value . PHP_EOL, BaseConsole::FG_GREEN);
                 }
@@ -64,8 +63,7 @@ class VaultController extends Controller
 
         if ($value === null) {
             $this->stdout('No value with the key "' . $key . '" exists.' . PHP_EOL, BaseConsole::FG_RED);
-        }
-        else {
+        } else {
             $this->stdout($key . ': ' . $value . PHP_EOL, BaseConsole::FG_GREEN);
         }
 

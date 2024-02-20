@@ -9,15 +9,9 @@ use Craft;
 use craft\base\Component;
 use putyourlightson\secrets\Secrets;
 
-/**
- * @property-read array $data
- */
 class VaultService extends Component
 {
-    /**
-     * @var null|array
-     */
-    private ?array $_data = null;
+    private ?array $data = null;
 
     /**
      * Returns the value from the vault.
@@ -32,18 +26,18 @@ class VaultService extends Component
     /**
      * Adds the value to the vault.
      */
-    public function addValue(string $key, string $value)
+    public function addValue(string $key, string $value): void
     {
         $data = $this->getData();
         $data[$key] = $value;
 
-        $this->_save($data);
+        $this->save($data);
     }
 
     /**
      * Deletes the value from the vault.
      */
-    public function deleteValue(string $key)
+    public function deleteValue(string $key): void
     {
         $data = $this->getData();
 
@@ -51,7 +45,7 @@ class VaultService extends Component
             unset($data[$key]);
         }
 
-        $this->_save($data);
+        $this->save($data);
     }
 
     /**
@@ -59,24 +53,24 @@ class VaultService extends Component
      */
     public function getData(): array
     {
-        if ($this->_data !== null) {
-            return $this->_data;
+        if ($this->data !== null) {
+            return $this->data;
         }
 
-        $this->_data = [];
+        $this->data = [];
         $contents = Secrets::$plugin->storage->getContents();
 
         if (empty($contents)) {
-            return $this->_data;
+            return $this->data;
         }
 
         $json = Craft::$app->security->decryptByKey($contents, Secrets::$plugin->settings->encryptionKey);
-        $this->_data = json_decode($json, true);
+        $this->data = json_decode($json, true);
 
-        return $this->_data;
+        return $this->data;
     }
 
-    private function _save(array $data)
+    private function save(array $data): void
     {
         $json = json_encode($data);
         $contents = Craft::$app->security->encryptByKey($json, Secrets::$plugin->settings->encryptionKey);

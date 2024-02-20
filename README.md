@@ -9,7 +9,7 @@ The Secrets plugin allows you to store and manage secrets in an encrypted file. 
 
 1. Secrets are encrypted and cannot be revealed without the encryption key.
 2. The encrypted file can be committed to your repository, meaning you avoid having to send secrets in plaintext to other developers. You also end up with a history of changes to the file.
-3. If secrets change or are rotated then there is only one file that needs to be updated. 
+3. If secrets change or are rotated then there is only one file that needs to be updated.
 
 ![Secrets CLI](https://putyourlightson.com/assets/images/plugins/secrets/secrets-cli.png)
 
@@ -23,7 +23,7 @@ This plugin is licensed for free under the MIT License.
 
 ## Requirements
 
-This plugin requires [Craft CMS](https://craftcms.com/) 3.0.3 or later, or 4.0.0 or later.
+This plugin requires [Craft CMS](https://craftcms.com/) 3.0.3 or later, or 4.0.0 or later, or 5.0.0 or later.
 
 ## Installation
 
